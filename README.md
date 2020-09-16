@@ -40,7 +40,7 @@ Finally, in order to allow internet access to my new VPC, a have made a internet
 ![VPC](https://i.imgur.com/818Mksk.png)
 
 ## Security
-Various measures where taken and considered for security measures. Firstly, 2 security groups where made, 1 for the elastic load balancer and the other for the launch configuration data. Both of these resources utilise specific port access through port 80 and operate under the HTTP protocol. Some time was taken considering the inclusion of HTTPS, a protocol I have only recently become used to outside of terraform, but opted not to as at of the benefits of my NGINX web server make up for its loss. More information on the web server will follow.
+Various measures where taken and considered for security measures. Firstly, 2 security groups where made, 1 for the elastic load balancer and the other for the launch configuration data. Both of these resources utilise specific port access through port 80 and operate under the HTTP protocol. Some time was taken considering the inclusion of HTTPS, a protocol I have only recently become used to outside of terraform, but opted not to as I believe the benefits of my NGINX web server make up for its loss. More information on the web server will follow.
 
 ![Security](https://i.imgur.com/XjwQOXY.png)
 
@@ -59,7 +59,7 @@ A big addition is the use of the launch configuration, which tailor the new inst
 ![ASG2](https://i.imgur.com/mUBNif4.png)
 
 ## Instances, Launch Configuration and Web Servers
-The instances, of which are created by the autoscaling group are made to design thanks to my launch configuration resource. I have kept the application very lightweight as to avoid any unwanted costs, so have opted for a t2.micro and good ol' Ubuntu 18.04 for the basis of my instance. The launch configuration also feature bash terminal commands, allowing me to install any other dependencies the instance made need to work in the auto scaling group. 
+The instances, of which are created by the autoscaling group are made to design thanks to my launch configuration resource. I have kept the application very lightweight as to avoid any unwanted costs, so have opted for a t2.micro and good ol' Ubuntu 18.04 for the basis of my instance. The launch configuration also features bash terminal commands, allowing me to install any other dependencies the instance made need to work in the auto scaling group. 
 
     "#!/bin/bash
     sudo apt-get update
